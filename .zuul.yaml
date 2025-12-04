@@ -19,9 +19,7 @@
     name: zuul-demo-hello
     run: playbooks/hello.yaml
     nodeset:
-      nodes:
-        - name: executor
-          label: executor
+          nodes: []
 
 - project:
     name: KARISHRAM/zuul-demo
