@@ -1,0 +1,30 @@
+- pipeline:
+    name: check
+    manager: independent
+    trigger:
+      my_github:
+        - event: pull_request
+          action:
+            - opened
+            - changed
+            - reopened
+    success:
+      my_github:
+        check: success
+    failure:
+      my_github:
+        check: failure
+
+- job:
+    name: zuul-demo-hello
+    run: playbooks/hello.yaml
+    nodeset:
+      nodes:
+        - name: executor
+          label: executor
+
+- project:
+    name: KARISHRAM/zuul-demo
+    check:
+      jobs:
+        - zuul-demo-hello
