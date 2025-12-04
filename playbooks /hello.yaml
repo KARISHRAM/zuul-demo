@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: Say Hello
+      debug:
+        msg: "Hello from Zuul!"
+
+    - name: Wait so human can see me
+      pause:
+        seconds: 30
