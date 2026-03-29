@@ -22,7 +22,7 @@
           nodes: []
 
 - project:
-    name: KARISHRAM/zuul-demo
+    #name: KARISHRAM/zuul-demo
     check:
       jobs:
         - zuul-demo-hello
